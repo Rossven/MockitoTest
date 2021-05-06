@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -34,9 +35,14 @@ public class LoginServiceTest {
         //eger when kullanmasaydık cagri bize null deger döndürecekti.
         when(userDao.findUserByName(userName)).thenReturn(user);
 
+
         //then
         //Burdada kullanıcı adı ve sifremizin dogru olduktan sonra döndürülen sonucun true olup olmadığını kontrol ediyoruz.
         assertTrue(loginService.canLogin(userName,userPassword));
+
+        
+        //findUserByName metodunun bize hangi çıktıyı verdiğini doğrulamış oluyoruz
+        verify(userDao).findUserByName("Atakan");
 
 
     }
