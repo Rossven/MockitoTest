@@ -2,8 +2,6 @@ package com.rossven.mockitotest;
 
 public class User {
 
-
-    private Long userId;
     private String userName;
     private String userPassword;
 
@@ -28,19 +26,4 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "Name=" + userName +
-                ", Password=" + userPassword +
-                '}';
-    }
 }
