@@ -3,19 +3,45 @@ package com.rossven.mockitotest.service;
 import com.rossven.mockitotest.User;
 import org.springframework.stereotype.Service;
 
+
+import java.util.List;
+
 @Service
 public class UserDao {
 
-    //Database init
-    User user = new User("Rossven","asd123");
 
-    public User findUserByName(String userName){
+    public List<User> setUsers() {
 
-        if (user.getUserName().equals("Rossven")){
-            return user;
+        return List.of(
+                new User(
+                        "Rossven",
+                        "111222"
+                ),
+                new User(
+                        "Atakan",
+                        "112233"
+                )
+        );
+    }
+
+    List<User> userList = setUsers();
+
+
+    public User findUserByName(String Name) {
+
+        User usr = null;
+
+        for(User d : userList){
+            if (d.getUserName() != null && d.getUserName().equals(Name)) {
+                usr=d;
+                break;
+            }
+            else {
+                usr= null;
+            }
         }
-        else
-            return user;
+
+        return usr;
     }
 
 }

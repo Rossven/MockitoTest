@@ -40,7 +40,7 @@ public class LoginServiceTest {
         //Burdada kullanıcı adı ve sifremizin dogru olduktan sonra döndürülen sonucun true olup olmadığını kontrol ediyoruz.
         assertTrue(loginService.canLogin(userName,userPassword));
 
-        
+
         //findUserByName metodunun bize hangi çıktıyı verdiğini doğrulamış oluyoruz
         verify(userDao).findUserByName("Atakan");
 

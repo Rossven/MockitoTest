@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UserController {
 
-    User user = new User("Rossven","asd123");
+    User user = new User("Rossven","111222");
 
     private LoginService loginService;
 
